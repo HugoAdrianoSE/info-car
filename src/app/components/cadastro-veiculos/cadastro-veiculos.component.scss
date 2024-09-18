@@ -1,0 +1,26 @@
+.container {
+  margin-left: 57px;
+  padding-top: 6px;
+
+  .fluid {
+    margin: 0 auto;
+    width: 96%;
+
+    .logo {
+      display: flex;
+
+      img {
+        height: 65px;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .bg-branco {
+    background-color: #FFF;
+  }
+}
+

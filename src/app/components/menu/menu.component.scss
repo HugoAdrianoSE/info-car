@@ -1,0 +1,31 @@
+.menu {
+  background-color: #FB8300;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  padding: 6px;
+  position: fixed;
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    &:hover {
+      background-color: #FFC303;
+      transition: 0.5;
+    }
+
+    .bi-car-front {
+      &::before {
+        color: #fff;
+        font-size: 25px;
+      }
+    }
+  }
+}

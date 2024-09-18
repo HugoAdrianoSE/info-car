@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CadastroVeiculosComponent } from './cadastro-veiculos/cadastro-veiculos.component';
+import { CadastroVeiculosComponent } from './components/cadastro-veiculos/cadastro-veiculos.component';
 
 @Component({
   selector: 'app-root',
