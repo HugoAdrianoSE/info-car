@@ -1,7 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
 body {
   background-color: #f0f0f0;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+
+  h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .bg-branco {
+    background-color: #FFF;
+  }
+
+  .container {
+    margin-left: 57px;
+    max-width: 96%;
+    padding-top: 6px;
+  }
+
+  .form-group {
+    text-transform: uppercase;
+
+    .form-floating {
+      .ux-label {
+        font-size: 12px !important;
+      }
+
+      .form-select {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .group {
+    .form-group {
+      .form-floating {
+        .form-control {
+          background-color: #ffffff;
+          border-radius: 0;
+          box-shadow: none;
+          color: #1E2445;
+          padding: 18px 12px;
+
+          &::placeholder {
+            transition: opacity 0.5s ease-in-out;
+          }
+
+          &:focus {
+            border-color: #E94164;
+
+            &::placeholder {
+              opacity: 0;
+            }
+          }
+
+          &:disabled {
+            background: #f5f5f5;
+            color: #cccccc;
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
 }
