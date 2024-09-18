@@ -40,3 +40,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Additional Ignored Files
+# Logs
+*.log
+
+# Environments
+/src/environments/*.ts
