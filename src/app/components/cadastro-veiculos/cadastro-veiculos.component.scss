@@ -32,21 +32,16 @@
           justify-content: space-between;
         }
 
-        .btn {
+        .btn-create {
           background-color: #FB8300;
-          border-radius: 10px;
-          color: #FFF;
-          font-size: 14px;
-          padding: 8px 16px;
 
           &:hover {
             background-color: #FFC303;
-            transition: 0.5;
+            color: #FFF;
           }
 
           .bi-plus-square {
             &::before {
-              color: #FFF;
               margin-right: 5px;
             }
           }
@@ -114,37 +109,17 @@
 
         .btn-edit {
           background-color: #2e76df;
-          border: none;
-          border-radius: 10px;
-          padding: 5px 10px;
 
           &:hover {
             background-color: #0466f5;
-            transition: 0.5;
-          }
-
-          .bi-pencil-square {
-            &::before {
-              color: #FFF;
-            }
           }
         }
 
         .btn-delete {
           background-color: #dc3545;
-          border: none;
-          border-radius: 10px;
-          padding: 5px 10px;
 
           &:hover {
             background-color: #ff0018;
-            transition: 0.5;
-          }
-
-          .bi-trash3 {
-            &::before {
-              color: #FFF;
-            }
           }
         }
       }
