@@ -39,8 +39,8 @@ export class CadastroVeiculosComponent {
   private async getVeiculos() {
     try {
       const response = await firstValueFrom(this.apiService.getVeiculos());
-      if (response && response.result && response.result.lista) {
-        this.listaVeiculos = response.result.lista;
+      if (response && response.result) {
+        this.listaVeiculos = response.result;
       }
     } catch (error) {
       console.error('Erro ao carregar veículos:', error);
