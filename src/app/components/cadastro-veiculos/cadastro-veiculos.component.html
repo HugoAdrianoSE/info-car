@@ -15,11 +15,11 @@
         <div class="new-item">
           <p>Bem vindo! Para cadastrar um novo veículo basta clicar no botão ao lado e preencher o formulário de cadastro.</p>
 
-          <button class="btn btn-create"><i class="bi bi-plus-square"></i>Novo veiculo</button>
+          <button class="btn btn-create" (click)="toggleForm()"><i class="bi bi-plus-square"></i>Novo veiculo</button>
         </div>
       </div>
 
-      <div class="container-content dados">
+      <div class="container-content dados" [ngClass]="{'show': showForm}">
         <h3 class="title"><i class="bi bi-card-text"></i>Dados do veículo</h3>
 
         <div class="row group">
@@ -79,42 +79,6 @@
                 <input type="text" class="form-control" placeholder="Confirmar senha"
                 name="confirmar senha">
                 <label class="label">Ano</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-content filter">
-        <h3 class="title"><i class="bi bi-filter"></i>Filtros</h3>
-
-        <div class="row group">
-          <div class="col-4 item">
-            <div class="form-group">
-              <div class="form-floating">
-                <input type="text" class="form-control" placeholder="Senha atual"
-                name="senha atual">
-                <label class="label">Senha atual</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4 item">
-            <div class="form-group">
-              <div class="form-floating">
-                <input type="text" class="form-control" placeholder="Nova senha"
-                name="nova senha">
-                <label class="label">Nova Senha</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4 item">
-            <div class="form-group">
-              <div class="form-floating">
-                <input type="text" class="form-control" placeholder="Confirmar senha"
-                name="confirmar senha">
-                <label class="label">Confirmar Senha</label>
               </div>
             </div>
           </div>
@@ -203,6 +167,42 @@
           </tbody>
         </table>
       </div>
+
+      <!-- <div class="container-content filter">
+        <h3 class="title"><i class="bi bi-filter"></i>Filtros</h3>
+
+        <div class="row group">
+          <div class="col-4 item">
+            <div class="form-group">
+              <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Senha atual"
+                name="senha atual">
+                <label class="label">Placa</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 item">
+            <div class="form-group">
+              <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Nova senha"
+                name="nova senha">
+                <label class="label">Chassi</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 item">
+            <div class="form-group">
+              <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Confirmar senha"
+                name="confirmar senha">
+                <label class="label">Renavam</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
     </div>
   </div>
 </section>

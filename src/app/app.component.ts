@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { CadastroVeiculosComponent } from './components/cadastro-veiculos/cadastro-veiculos.component';
+
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ import { CadastroVeiculosComponent } from './components/cadastro-veiculos/cadast
 
   imports: [
     RouterOutlet,
+    CommonModule,
     CadastroVeiculosComponent,
   ],
 })

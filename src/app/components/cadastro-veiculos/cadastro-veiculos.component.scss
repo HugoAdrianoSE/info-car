@@ -49,6 +49,26 @@
         }
       }
 
+      .dados {
+        left: 0;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        transform: translateY(-20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+
+        &.show {
+          height: auto;
+          opacity: 1;
+          position: relative;
+          transform: translateY(0);
+          visibility: visible;
+        }
+      }
+
       .filter {
         .title {
           .bi-filter {
