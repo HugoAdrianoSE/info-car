@@ -112,16 +112,6 @@
         }
       }
 
-      .filter {
-        .title {
-          .bi-filter {
-            &::before {
-              font-size: 25px;
-            }
-          }
-        }
-      }
-
       .list {
         height: auto;
         opacity: 1;
@@ -202,6 +192,16 @@
 
           &:hover {
             background-color: #ff0018;
+          }
+        }
+      }
+
+      .filter {
+        .title {
+          .bi-filter {
+            &::before {
+              font-size: 25px;
+            }
           }
         }
       }
