@@ -15,9 +15,17 @@ import { CommonModule } from '@angular/common';
 })
 
 export class CadastroVeiculosComponent {
-  showForm = false;
+  public showForm = false;
 
-  toggleForm() {
+  public async ngOnInit() {
+
+  }
+
+  public toggleForm() {
     this.showForm = !this.showForm;
+  }
+
+  public closeForm() {
+    this.showForm = false;
   }
 }

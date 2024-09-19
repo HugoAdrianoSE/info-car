@@ -15,7 +15,7 @@
         <div class="new-item">
           <p>Bem vindo! Para cadastrar um novo veículo basta clicar no botão ao lado e preencher o formulário de cadastro.</p>
 
-          <button class="btn btn-create" (click)="toggleForm()"><i class="bi bi-plus-square"></i>Novo veiculo</button>
+          <button class="btn btn-create" (click)="toggleForm()" [disabled]="showForm"><i class="bi bi-plus-square"></i>Novo veiculo</button>
         </div>
       </div>
 
@@ -82,6 +82,11 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="action">
+          <button class="btn btn-save"><i class="bi bi-save"></i>Salvar</button>
+          <button class="btn btn-cancel" (click)="closeForm()"><i class="bi bi-x-square"></i>Cancelar</button>
         </div>
       </div>
 
