@@ -7,14 +7,14 @@
   position: fixed;
 
   a {
-    cursor: pointer;
-    text-decoration: none;
-    padding: 8px 10px;
-    display: flex;
     align-items: center;
-    justify-content: center;
     border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
     margin-bottom: 10px;
+    padding: 8px 10px;
+    text-decoration: none;
 
     &:hover {
       background-color: #FFC303;
