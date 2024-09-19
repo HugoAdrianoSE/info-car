@@ -32,6 +32,7 @@ body {
           border-radius: 8px;
           box-shadow: none;
           color: #1E2445;
+          font-size: 14px;
           padding: 18px 12px;
 
           &::placeholder {
@@ -45,6 +46,17 @@ body {
               opacity: 0;
             }
           }
+
+          &:focus + .label,
+          &:not(:placeholder-shown) + .label {
+            font-size: 12px;
+            transform: scale(.85) translateY(-1.6rem) translateX(.15rem);
+            transition: transform 0.3s ease, font-size 0.3s ease;
+          }
+        }
+
+        .label {
+          font-size: 14px;
         }
       }
     }
