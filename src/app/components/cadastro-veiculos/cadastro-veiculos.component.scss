@@ -15,25 +15,73 @@
 
     .content {
       .container-filter {
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         margin-top: 20px;
         padding: 20px;
 
         .title {
-          align-items: center;
-          display: flex;
-          margin-bottom: 15px;
-
           .bi-filter {
             &::before {
               font-size: 25px;
-              margin-right: 5px;
             }
           }
         }
       }
 
       .container-table {
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         margin-top: 20px;
+        padding: 20px;
+
+        .title {
+          background-color: #FB8300;
+          border-radius: 8px;
+          color: #FFF;
+          padding: 12px 0 12px 5px;
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+          .bi-car-front-fill {
+            &::before {
+              color: #FFF;
+            }
+          }
+        }
+
+        .table {
+          tbody {
+            tr {
+              border: 1px solid #E7E7E7;
+
+              td,
+              th {
+                border-left: 1px solid #E7E7E7;
+                border-right: 1px solid #E7E7E7;
+              }
+
+              &:first-child {
+                td,
+                th {
+                  border-top: 1px solid #E7E7E7;
+                }
+              }
+
+              &:last-child {
+                td,
+                th {
+                  border-bottom: 1px solid #E7E7E7;
+                }
+              }
+            }
+          }
+
+          thead {
+            th {
+              border-bottom: 1px solid #E7E7E7;
+            }
+          }
+        }
       }
     }
   }
