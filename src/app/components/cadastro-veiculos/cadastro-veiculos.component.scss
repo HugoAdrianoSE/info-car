@@ -80,6 +80,24 @@
       }
 
       .list {
+        height: auto;
+        opacity: 1;
+        position: relative;
+        transform: translateY(0);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        visibility: visible;
+
+        &.hide {
+          left: 0;
+          top: 0;
+          opacity: 0;
+          overflow: hidden;
+          position: absolute;
+          transform: translateY(-20px);
+          visibility: hidden;
+          width: 100%;
+        }
+
         .title {
           background-color: #FB8300;
           border-radius: 10px;
