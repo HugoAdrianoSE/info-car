@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms';
 import { AlertService } from '../../services/alert.service';
+import { AlertDeleteComponent } from '../alert-delete/alert-delete.component';
 
 @Component({
   selector: 'app-cadastro-veiculos',
@@ -14,8 +15,8 @@ import { AlertService } from '../../services/alert.service';
   imports: [
     CommonModule,
     FormsModule,
-
     MenuComponent,
+    AlertDeleteComponent,
   ],
 })
 
@@ -30,6 +31,8 @@ export class CadastroVeiculosComponent {
     ano: ''
   };
   public listaVeiculos: any[] = [];
+  public showDeleteConfirm: boolean = false;
+  public selectedVeiculoId: number | null = null;
 
   constructor(
     private apiService: ApiService,
@@ -62,6 +65,22 @@ export class CadastroVeiculosComponent {
   public editarVeiculo(item: any) {
     this.veiculo = {...item};
     this.toggleForm();
+  }
+
+  public confirmDelete(id: number) {
+    this.selectedVeiculoId = id;
+    this.showDeleteConfirm = true;
+  }
+
+  public closeDeleteConfirm() {
+    this.showDeleteConfirm = false;
+    this.selectedVeiculoId = null;
+  }
+
+  public confirmarDeletarVeiculo() {
+    if (this.selectedVeiculoId !== null) {
+      this.deletarVeiculo(this.selectedVeiculoId);
+    }
   }
 
   public async actionCadastro() {
@@ -127,7 +146,8 @@ export class CadastroVeiculosComponent {
 
     this.apiService.deletarVeiculo(id).then(() => {
       this.alertService.show('Sucesso!', 'Veículo deletado com sucesso.');
-      this.getVeiculos(); // Atualiza a lista de veículos após a exclusão
+      this.getVeiculos();
+      this.closeDeleteConfirm();
     }).catch(error => {
       this.alertService.show('Erro!', 'Erro ao deletar o veículo.');
       console.error('Erro ao deletar veículo:', error);

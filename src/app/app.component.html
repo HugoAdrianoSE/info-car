@@ -2,12 +2,14 @@
 
 <div *ngIf="titulo">
   <div class="bg-block"></div>
+
   <div class="alerta">
     <div class="titulo">
       <p>{{titulo}}</p>
     </div>
 
     <span *ngIf="subtitulo">{{subtitulo}}</span>
+
     <button class="btn outline btn-sm" (click)="closeAlert()">Fechar</button>
   </div>
 </div>
