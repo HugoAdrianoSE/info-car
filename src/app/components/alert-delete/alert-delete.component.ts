@@ -14,6 +14,12 @@ export class AlertDeleteComponent {
   @Output() confirmDelete = new EventEmitter<void>();
   @Output() cancelDelete = new EventEmitter<void>();
 
+  constructor() { }
+
+  public async ngOnInit() {
+
+  }
+
   public actionConfirm() {
     this.confirmDelete.emit();
   }

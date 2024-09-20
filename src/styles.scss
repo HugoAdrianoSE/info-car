@@ -99,6 +99,7 @@ body {
   .btn-solid {
     background-color: #FB8300;
     border: 1px solid #FB8300;
+    min-width: 81px;
 
     &:hover {
       background-color: #FFC303;
@@ -110,6 +111,7 @@ body {
   .btn-outline {
     border: 1px solid #FB8300;
     color: #FB8300;
+    min-width: 81px;
 
     &:hover {
       border-color: #F3f3f3;

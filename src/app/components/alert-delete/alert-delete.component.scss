@@ -53,19 +53,6 @@
     overflow: hidden;
     word-break: break-word;
   }
-
-  .outline {
-    background-color: #FB8300;
-    border: none;
-    color: #FFF;
-    font-weight: bold;
-    padding: 10px 30px;
-    text-transform: uppercase;
-
-    &:hover {
-      background-color: #FFC303;
-    }
-  }
 }
 
 @media all and (max-width: 577px) {
@@ -75,10 +62,6 @@
 
     p {
       font-size: 16px;
-    }
-
-    .outline {
-      font-size: 12px;
     }
   }
 }
