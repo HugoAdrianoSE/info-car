@@ -78,10 +78,15 @@ body {
     border-radius: 10px;
     color: #FFF;
     font-size: 14px;
+    margin-right: 10px;
     padding: 8px 12px;
 
     &:hover {
       transition: 0.5;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
 
     .bi {
@@ -89,5 +94,32 @@ body {
         color: #FFF;
       }
     }
+  }
+
+  .btn-solid {
+    background-color: #FB8300;
+    border: 1px solid #FB8300;
+
+    &:hover {
+      background-color: #FFC303;
+      border-color: #FFC303;
+      color: #FFF;
+    }
+  }
+
+  .btn-outline {
+    border: 1px solid #FB8300;
+    color: #FB8300;
+
+    &:hover {
+      border-color: #F3f3f3;
+      background-color: #F3f3f3;
+    }
+  }
+
+  .action {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
   }
 }

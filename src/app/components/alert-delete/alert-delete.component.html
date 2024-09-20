@@ -7,6 +7,8 @@
 
   <span>{{ subtitulo }}</span>
 
-  <button class="btn outline btn-sm" (click)="actionCancel()">Cancelar</button>
-  <button class="btn btn-danger btn-sm" (click)="actionConfirm()">Excluir</button>
+  <div class="action">
+    <button class="btn btn-solid" (click)="actionConfirm()">Excluir</button>
+    <button class="btn btn-outline" (click)="actionCancel()">Cancelar</button>
+  </div>
 </div>

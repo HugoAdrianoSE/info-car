@@ -67,49 +67,6 @@
           transform: translateY(0);
           visibility: visible;
         }
-
-        .action {
-          display: flex;
-          justify-content: center;
-          margin-top: 20px;
-
-          .btn-save {
-            background-color: #FB8300;
-            border: 1px solid #FB8300;
-            margin-right: 10px;
-            width: 12%;
-
-            &:hover {
-              background-color: #FFC303;
-              border-color: #FFC303;
-              color: #FFF;
-            }
-
-            .bi {
-              &::before {
-                margin-right: 5px;
-              }
-            }
-          }
-
-          .btn-cancel {
-            border: 1px solid #FB8300;
-            color: #FB8300;
-            width: 12%;
-
-            &:hover {
-              border-color: #F3f3f3;
-              background-color: #F3f3f3;
-            }
-
-            .bi {
-              &::before {
-                color: #FB8300;
-                margin-right: 5px;
-              }
-            }
-          }
-        }
       }
 
       .list {
