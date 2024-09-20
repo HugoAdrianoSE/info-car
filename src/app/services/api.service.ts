@@ -17,15 +17,15 @@ export class ApiService {
     return this.http.post<any>(this.apiUrl, data).toPromise();
   }
 
-  public listarVeiculos(): Promise<any[]> {
-    return this.http.get<any[]>(this.apiUrl).toPromise().then(response => response ?? []);
+  public deletarVeiculo(id: number): Promise<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).toPromise();
   }
 
   public editarVeiculo(id: number, data: any): Promise<any> {
     return this.http.put<any>(`${this.apiUrl}/${id}`, data).toPromise();
   }
 
-  public deletarVeiculo(id: number): Promise<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`).toPromise();
+  public listarVeiculos(): Promise<any[]> {
+    return this.http.get<any[]>(this.apiUrl).toPromise().then(response => response ?? []);
   }
 }
