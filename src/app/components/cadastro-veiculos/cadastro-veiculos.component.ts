@@ -116,7 +116,7 @@ export class CadastroVeiculosComponent {
         this.listaVeiculos = response;
       }
     } catch (error) {
-      console.error('Erro ao carregar veículos:', error);
+      this.alertService.show('Erro!', 'Ocorreu um erro ao carregar os dados dos veículos');
     }
   }
 }
