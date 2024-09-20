@@ -59,6 +59,11 @@ export class CadastroVeiculosComponent {
     };
   }
 
+  public editarVeiculo(item: any) {
+    this.veiculo = {...item};
+    this.toggleForm();
+  }
+
   public async actionCadastro() {
     if (!this.veiculo.placa) {
       this.alertService.show('Atenção!', 'Por favor, informe uma placa para prosseguir.');
@@ -95,17 +100,22 @@ export class CadastroVeiculosComponent {
 
   public async salvarVeiculo() {
     try {
-      const response = await this.apiService.cadastrarVeiculo(this.veiculo);
+      let response;
 
-      if (response && response.message === 'Veículo cadastrado com sucesso') {
-        this.listaVeiculos.push(response.veiculoRecebido);
-        this.resetForm();
-        this.closeForm();
-        await this.getVeiculos();
+      if (this.veiculo.id) {
+        response = await this.apiService.editarVeiculo(this.veiculo.id, this.veiculo);
+        this.alertService.show('Sucesso!', 'Veículo atualizado com sucesso.');
+      } else {
+        response = await this.apiService.cadastrarVeiculo(this.veiculo);
         this.alertService.show('Sucesso!', 'Veículo cadastrado com sucesso.');
       }
+
+      await this.getVeiculos();
+      this.resetForm();
+      this.closeForm();
+
     } catch (error) {
-      this.alertService.show('Erro!', 'Ocorreu um erro ao cadastrar veículo. Tente novamente.');
+      this.alertService.show('Erro!', 'Ocorreu um erro. Tente novamente.');
     }
   }
 
