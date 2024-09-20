@@ -116,7 +116,7 @@
               </td>
 
               <td>
-                <button class="btn btn-delete" title="Deletar">
+                <button class="btn btn-delete" title="Deletar" (click)="deletarVeiculo(item.id)">
                   <i class="bi bi-trash3"></i>
                 </button>
               </td>
@@ -124,42 +124,6 @@
           </tbody>
         </table>
       </div>
-
-      <!-- <div class="container-content filter">
-        <h3 class="title"><i class="bi bi-filter"></i>Filtros</h3>
-
-        <div class="row group">
-          <div class="col-4 item">
-            <div class="form-group">
-              <div class="form-floating">
-                <input type="text" class="form-control" placeholder="Senha atual"
-                name="senha atual">
-                <label class="label">Placa</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4 item">
-            <div class="form-group">
-              <div class="form-floating">
-                <input type="text" class="form-control" placeholder="Nova senha"
-                name="nova senha">
-                <label class="label">Chassi</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4 item">
-            <div class="form-group">
-              <div class="form-floating">
-                <input type="text" class="form-control" placeholder="Confirmar senha"
-                name="confirmar senha">
-                <label class="label">Renavam</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </section>
