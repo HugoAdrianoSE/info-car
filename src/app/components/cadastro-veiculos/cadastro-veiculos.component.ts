@@ -48,7 +48,7 @@ export class CadastroVeiculosComponent {
     this.showForm = false;
   }
 
-  public cleamForm() {
+  public resetForm() {
     this.veiculo = {
       placa: '',
       chassi: '',
@@ -65,6 +65,31 @@ export class CadastroVeiculosComponent {
       return;
     }
 
+    if (!this.veiculo.chassi) {
+        this.alertService.show('Atenção!', 'Por favor, informe o chassi para prosseguir.');
+        return;
+    }
+
+    if (!this.veiculo.renavam) {
+        this.alertService.show('Atenção!', 'Por favor, informe o renavam para prosseguir.');
+        return;
+    }
+
+    if (!this.veiculo.modelo) {
+        this.alertService.show('Atenção!', 'Por favor, informe o modelo para prosseguir.');
+        return;
+    }
+
+    if (!this.veiculo.marca) {
+        this.alertService.show('Atenção!', 'Por favor, informe a marca para prosseguir.');
+        return;
+    }
+
+    if (!this.veiculo.ano) {
+        this.alertService.show('Atenção!', 'Por favor, informe o ano de fabricação para prosseguir.');
+        return;
+    }
+
     await this.salvarVeiculo();
   }
 
@@ -74,7 +99,7 @@ export class CadastroVeiculosComponent {
 
       if (response && response.message === 'Veículo cadastrado com sucesso') {
         this.listaVeiculos.push(response.veiculoRecebido);
-        this.cleamForm();
+        this.resetForm();
         this.closeForm();
         await this.getVeiculos();
 

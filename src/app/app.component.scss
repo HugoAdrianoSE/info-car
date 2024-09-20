@@ -1,7 +1,21 @@
+.bg-block {
+  background-color: #000;
+  border: none;
+  height: 100%;
+  left: 0px;
+  margin: 0px;
+  opacity: 0.8;
+  padding: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 9999;
+}
+
 .alerta {
-  background: #ffffff;
-  border-radius: 5px;
-  color: #121A3D;
+  background-color: #FFF;
+  border-radius: 10px;
+  color: #212529;
   left: 50%;
   margin-left: -175px;
   transform: translateY(-50%);
@@ -18,7 +32,7 @@
     justify-content: center;
 
     p {
-      border-bottom: solid 2px #121A3D;
+      border-bottom: solid 2px #FB8300;
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 25px;
@@ -41,15 +55,15 @@
   }
 
   .outline {
-    background-color: #fd3b61;
+    background-color: #FB8300;
     border: none;
-    color: #ffffff;
+    color: #FFF;
     font-weight: bold;
     padding: 10px 30px;
     text-transform: uppercase;
 
     &:hover {
-      opacity: 0.8;
+      background-color: #FFC303;
     }
   }
 }
