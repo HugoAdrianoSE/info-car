@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
 
 export class CadastroVeiculosComponent {
   public showForm = false;
-  public adicionarVeiculo: any = {
+  public veiculo: any = {
     placa: '',
     chassi: '',
     renavam: '',
@@ -48,7 +48,7 @@ export class CadastroVeiculosComponent {
   }
 
   public cleamForm() {
-    this.adicionarVeiculo = {
+    this.veiculo = {
       placa: '',
       chassi: '',
       renavam: '',
@@ -60,7 +60,7 @@ export class CadastroVeiculosComponent {
 
   public async salvarVeiculo() {
     try {
-      const response = await firstValueFrom(this.apiService.cadastrarVeiculo(this.adicionarVeiculo));
+      const response = await this.apiService.cadastrarVeiculo(this.veiculo);
 
       if (response && response.message === 'Veículo cadastrado com sucesso') {
         this.listaVeiculos.push(response.veiculoRecebido);
@@ -69,6 +69,8 @@ export class CadastroVeiculosComponent {
         await this.getVeiculos();
 
         console.log('Veículo cadastrado e lista atualizada.');
+      } else {
+        console.error('Erro no cadastro: resposta inválida', response);
       }
     } catch (error) {
       console.error('Erro ao cadastrar veículo:', error);
@@ -77,9 +79,9 @@ export class CadastroVeiculosComponent {
 
   private async getVeiculos() {
     try {
-      const response = await firstValueFrom(this.apiService.listarVeiculos());
-      if (response && response.result) {
-        this.listaVeiculos = response.result;
+      const response = await this.apiService.listarVeiculos();
+      if (response) {
+        this.listaVeiculos = response;
       }
     } catch (error) {
       console.error('Erro ao carregar veículos:', error);

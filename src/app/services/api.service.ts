@@ -7,25 +7,25 @@ import { Observable } from 'rxjs';
 })
 
 export class ApiService {
-  private apiUrl = 'https://veiculos.free.beeceptor.com/api/veiculos';
+  private apiUrl = 'http://localhost:3000/veiculos';
 
   constructor(
     private http: HttpClient
   ) {}
 
-  public listarVeiculos(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  public cadastrarVeiculo(data: any): Promise<any> {
+    return this.http.post<any>(this.apiUrl, data).toPromise();
   }
 
-  public cadastrarVeiculo(data: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, data);
+  public listarVeiculos(): Promise<any[]> {
+    return this.http.get<any[]>(this.apiUrl).toPromise().then(response => response ?? []);
   }
 
-  // public editarVeiculo(veiculo: any): Observable<any> {
-  //   return this.http.put<any>(this.apiUrl, veiculo);
-  // }
+  public editarVeiculo(id: number, data: any): Promise<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, data).toPromise();
+  }
 
-  // public deletarVeiculo(veiculo: any): Observable<any> {
-  //   return this.http.delete<any>(this.apiUrl, veiculo);
-  // }
+  public deletarVeiculo(id: number): Promise<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).toPromise();
+  }
 }
