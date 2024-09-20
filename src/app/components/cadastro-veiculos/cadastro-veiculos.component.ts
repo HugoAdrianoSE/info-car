@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
-import { firstValueFrom } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-cadastro-veiculos',
@@ -33,6 +33,7 @@ export class CadastroVeiculosComponent {
 
   constructor(
     private apiService: ApiService,
+    private alertService: AlertService,
   ) {}
 
   public async ngOnInit() {
@@ -56,6 +57,15 @@ export class CadastroVeiculosComponent {
       marca: '',
       ano: ''
     };
+  }
+
+  public async actionCadastro() {
+    if (!this.veiculo.placa) {
+      this.alertService.show('Atenção!', 'Por favor, informe uma placa para prosseguir.');
+      return;
+    }
+
+    await this.salvarVeiculo();
   }
 
   public async salvarVeiculo() {
