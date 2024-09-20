@@ -102,13 +102,10 @@ export class CadastroVeiculosComponent {
         this.resetForm();
         this.closeForm();
         await this.getVeiculos();
-
-        console.log('Veículo cadastrado e lista atualizada.');
-      } else {
-        console.error('Erro no cadastro: resposta inválida', response);
+        this.alertService.show('Sucesso!', 'Veículo cadastrado com sucesso.');
       }
     } catch (error) {
-      console.error('Erro ao cadastrar veículo:', error);
+      this.alertService.show('Erro!', 'Ocorreu um erro ao cadastrar veículo. Tente novamente.');
     }
   }
 
