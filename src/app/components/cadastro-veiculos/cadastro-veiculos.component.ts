@@ -47,11 +47,29 @@ export class CadastroVeiculosComponent {
     this.showForm = false;
   }
 
-  public async addVeiculo() {
+  public cleamForm() {
+    this.adicionarVeiculo = {
+      placa: '',
+      chassi: '',
+      renavam: '',
+      modelo: '',
+      marca: '',
+      ano: ''
+    };
+  }
+
+  public async salvarVeiculo() {
     try {
-      await this.apiService.cadastrarVeiculo(this.adicionarVeiculo);
-      this.closeForm();
-      await this.getVeiculos();
+      const response = await firstValueFrom(this.apiService.cadastrarVeiculo(this.adicionarVeiculo));
+
+      if (response && response.message === 'Veículo cadastrado com sucesso') {
+        this.listaVeiculos.push(response.veiculoRecebido);
+        this.cleamForm();
+        this.closeForm();
+        await this.getVeiculos();
+
+        console.log('Veículo cadastrado e lista atualizada.');
+      }
     } catch (error) {
       console.error('Erro ao cadastrar veículo:', error);
     }
