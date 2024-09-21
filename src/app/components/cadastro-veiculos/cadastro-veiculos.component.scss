@@ -145,3 +145,52 @@
   }
 }
 
+@media all and (max-width: 960px) {
+  .container {
+    margin: 0 auto;
+
+    .content {
+      .info {
+        p {
+          width: 68%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .container {
+    margin: 0 auto;
+
+    .content {
+      .list {
+        .table-responsive {
+          width: 100%;
+
+          .table {
+            min-width: 850px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    .content {
+      .container-content {
+        margin-top: 20px;
+        padding: 15px;
+      }
+
+      .info {
+        p {
+          width: 55%;
+        }
+      }
+    }
+  }
+}
+
