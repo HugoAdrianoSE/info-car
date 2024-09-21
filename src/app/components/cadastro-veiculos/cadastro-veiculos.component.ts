@@ -84,34 +84,29 @@ export class CadastroVeiculosComponent {
   }
 
   public async actionCadastro() {
-    if (!this.veiculo.placa) {
-      this.alertService.show('Atenção!', 'Por favor, informe uma placa para prosseguir.');
+    if (!this.veiculo.placa || !this.veiculo.chassi || !this.veiculo.renavam || !this.veiculo.modelo || !this.veiculo.marca || !this.veiculo.ano) {
+      this.alertService.show('Atenção!', 'Por favor, preencha todos os campos para prosseguir.');
       return;
     }
 
-    if (!this.veiculo.chassi) {
-        this.alertService.show('Atenção!', 'Por favor, informe o chassi para prosseguir.');
-        return;
+    if (this.veiculo.placa && this.veiculo.placa.length !== 7) {
+      this.alertService.show('Atenção!', 'Por favor, informe uma placa válida com 7 caracteres para prosseguir.');
+      return;
     }
 
-    if (!this.veiculo.renavam) {
-        this.alertService.show('Atenção!', 'Por favor, informe o renavam para prosseguir.');
-        return;
+    if (this.veiculo.chassi && this.veiculo.chassi.length !== 17) {
+      this.alertService.show('Atenção!', 'Por favor, informe um chassi válido com 17 caracteres para prosseguir.');
+      return;
     }
 
-    if (!this.veiculo.modelo) {
-        this.alertService.show('Atenção!', 'Por favor, informe o modelo para prosseguir.');
-        return;
+    if (this.veiculo.renavam && this.veiculo.renavam.length !== 11) {
+      this.alertService.show('Atenção!', 'Por favor, informe um renavam válido com 11 caracteres para prosseguir.');
+      return;
     }
 
-    if (!this.veiculo.marca) {
-        this.alertService.show('Atenção!', 'Por favor, informe a marca para prosseguir.');
-        return;
-    }
-
-    if (!this.veiculo.ano) {
-        this.alertService.show('Atenção!', 'Por favor, informe o ano de fabricação para prosseguir.');
-        return;
+    if (this.veiculo.ano && this.veiculo.ano.length !== 4) {
+      this.alertService.show('Atenção!', 'Por favor, informe um ano válido com 4 caracteres para prosseguir.');
+      return;
     }
 
     await this.salvarVeiculo();

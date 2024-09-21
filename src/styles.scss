@@ -25,6 +25,14 @@ body {
     padding-top: 6px;
   }
 
+  .container-content {
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+    padding: 20px;
+  }
+
   .group {
     .form-group {
       .form-floating {
@@ -51,7 +59,13 @@ body {
           &:not(:placeholder-shown) + .label {
             font-size: 12px;
             transform: scale(.85) translateY(-1.6rem) translateX(.15rem);
-            transition: transform 0.3s ease, font-size 0.3s ease;
+            transition: transform 0.4s ease-in-out, font-size 0.4s ease-in-out;
+          }
+
+          &:not(:focus):placeholder-shown + .label {
+            font-size: 14px;
+            transform: scale(1) translateY(0) translateX(0);
+            transition: transform 0.4s ease-in-out, font-size 0.4s ease-in-out;
           }
         }
 

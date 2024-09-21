@@ -9,13 +9,13 @@
     </div>
 
     <div class="content">
-      <div class="container-content msg">
+      <div class="container-content info">
         <h3 class="title"><i class="bi bi-info-circle"></i>Info</h3>
 
-        <div class="new-item">
+        <div class="msg">
           <p>Bem vindo! Para cadastrar um novo veículo basta clicar no botão ao lado e preencher o formulário de cadastro.</p>
 
-          <button class="btn btn-create" (click)="toggleForm()" [disabled]="showForm"><i class="bi bi-plus-square"></i>Novo veiculo</button>
+          <button class="btn btn-solid" (click)="toggleForm()" [disabled]="showForm"><i class="bi bi-plus-square"></i>Novo veiculo</button>
         </div>
       </div>
 
@@ -26,7 +26,7 @@
           <div class="col-4 item">
             <div class="form-group mb-3">
               <div class="form-floating">
-                <input class="form-control" type="text" placeholder="Placa" name="placa" [(ngModel)]="veiculo.placa">
+                <input class="form-control" type="text" placeholder="Placa" name="placa" maxlength="7" [(ngModel)]="veiculo.placa">
                 <label class="label">Placa</label>
               </div>
             </div>
@@ -35,7 +35,7 @@
           <div class="col-4 item">
             <div class="form-group mb-3">
               <div class="form-floating">
-                <input class="form-control" type="text" placeholder="Chassi" name="chassi" [(ngModel)]="veiculo.chassi">
+                <input class="form-control" type="text" placeholder="Chassi" name="chassi" maxlength="17" [(ngModel)]="veiculo.chassi">
                 <label class="label">Chassi</label>
               </div>
             </div>
@@ -44,7 +44,7 @@
           <div class="col-4 item">
             <div class="form-group mb-3">
               <div class="form-floating">
-                <input class="form-control" type="text" placeholder="Renavam" name="renavam" [(ngModel)]="veiculo.renavam">
+                <input class="form-control" type="tel" placeholder="Renavam" name="renavam" maxlength="11" [(ngModel)]="veiculo.renavam">
                 <label class="label">Renavam</label>
               </div>
             </div>
@@ -71,7 +71,7 @@
           <div class="col-4 item">
             <div class="form-group mb-3">
               <div class="form-floating">
-                <input class="form-control" type="text" placeholder="Ano" name="ano" [(ngModel)]="veiculo.ano">
+                <input class="form-control" type="tel" placeholder="Ano" name="ano" minlength="4" maxlength="4" [(ngModel)]="veiculo.ano">
                 <label class="label">Ano</label>
               </div>
             </div>

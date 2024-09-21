@@ -14,36 +14,23 @@
     }
 
     .content {
-      .container-content {
-        background-color: #FFF;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        margin-top: 20px;
-        padding: 20px;
-      }
-
-      .msg {
+      .info {
         p {
           font-weight: 500;
         }
 
-        .new-item {
+        .msg {
           align-items: center;
           display: flex;
           justify-content: space-between;
-        }
 
-        .btn-create {
-          background-color: #FB8300;
+          .btn-solid {
+            min-width: none;
 
-          &:hover {
-            background-color: #FFC303;
-            color: #FFF;
-          }
-
-          .bi-plus-square {
-            &::before {
-              margin-right: 5px;
+            .bi-plus-square {
+              &::before {
+                margin-right: 5px;
+              }
             }
           }
         }
