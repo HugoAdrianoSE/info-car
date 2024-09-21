@@ -26,6 +26,6 @@ export class ApiService {
   }
 
   public listarVeiculos(): Promise<any[]> {
-    return this.http.get<any[]>(this.apiUrl).toPromise().then(response => response ?? []);
+    return this.http.get<{ message: string; veiculos: any[] }>(this.apiUrl).toPromise().then(response => response?.veiculos || []);
   }
 }
