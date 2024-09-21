@@ -99,14 +99,32 @@ export class CadastroVeiculosComponent {
       return;
     }
 
-    if (this.veiculo.renavam && this.veiculo.renavam.length !== 11) {
-      this.alertService.show('Atenção!', 'Por favor, informe um renavam válido com 11 caracteres para prosseguir.');
-      return;
+    if (this.veiculo.renavam) {
+      if (this.veiculo.renavam.length !== 11) {
+        this.alertService.show('Atenção!', 'Por favor, informe um renavam válido com 11 caracteres para prosseguir.');
+        return;
+      }
+
+      const renavamRgx = /^\d{11}$/;
+      if (!renavamRgx.test(this.veiculo.renavam)) {
+        this.alertService.show('Atenção!', 'O renavam deve conter apenas números.');
+        return;
+      }
     }
 
-    if (this.veiculo.ano && this.veiculo.ano.length !== 4) {
-      this.alertService.show('Atenção!', 'Por favor, informe um ano válido com 4 caracteres para prosseguir.');
-      return;
+    const anoAtual = new Date().getFullYear();
+    if (this.veiculo.ano) {
+      if (this.veiculo.ano.length !== 4) {
+        this.alertService.show('Atenção!', 'Por favor, informe um ano válido com 4 caracteres para prosseguir.');
+        return;
+      }
+
+      const valorAno = parseInt(this.veiculo.ano, 10);
+
+      if (valorAno > anoAtual) {
+        this.alertService.show('Atenção!', 'O ano não pode ser superior ao ano atual.');
+        return;
+      }
     }
 
     await this.salvarVeiculo();
