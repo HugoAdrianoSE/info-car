@@ -133,20 +133,21 @@ export class CadastroVeiculosComponent {
     }
   }
 
-  public deletarVeiculo(id: number): void {
+  public async deletarVeiculo(id: number) {
     if (!id) {
       this.alertService.show('Erro!', 'ID do veículo não encontrado.');
       return;
     }
 
-    this.apiService.deletarVeiculo(id).then(() => {
+    try {
+      await this.apiService.deletarVeiculo(id);
       this.alertService.show('Sucesso!', 'Veículo deletado com sucesso.');
-      this.getVeiculos();
+
+      await this.getVeiculos();
       this.closeDeleteConfirm();
-    }).catch(error => {
+    } catch (error) {
       this.alertService.show('Erro!', 'Erro ao deletar o veículo.');
-      console.error('Erro ao deletar veículo:', error);
-    });
+    }
   }
 
   private async getVeiculos() {
