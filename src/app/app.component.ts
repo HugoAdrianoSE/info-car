@@ -22,7 +22,7 @@ import { AlertService } from './services/alert.service';
 })
 
 export class AppComponent {
-  public title = 'Info Tecnologia';
+  public title = 'Info Car';
   public titulo?: string;
   public subtitulo?: string;
 
